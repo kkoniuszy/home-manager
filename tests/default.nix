@@ -192,6 +192,7 @@ in import nmtSrc {
     ./modules/programs/borgmatic
     ./modules/programs/boxxy
     ./modules/programs/firefox/firefox.nix
+    ./modules/programs/firefox/librewolf.nix
     ./modules/programs/foot
     ./modules/programs/freetube
     ./modules/programs/fuzzel
