@@ -67,6 +67,9 @@ let
         // (lib.optionalAttrs (profile.storeId != null) {
           StoreID = profile.storeId;
         })
+        // (lib.optionalAttrs (profile.showSelector != null) {
+          ShowSelector = if profile.showSelector then 1 else 0;
+        })
       )
     )
     // {
@@ -509,6 +512,16 @@ in
                   A predictable StoreID helps bridge the old and new firefox profile implementations.
                   The StoreID is the name of the sqlite database in "Profile Groups" holding the new
                   profiles' metadata.
+                '';
+              };
+
+              showSelector = mkOption {
+                type = types.nullOr types.bool;
+                default = null;
+                example = true;
+                description = ''
+                  Whether to show the new profile selector. Should be used on a default profile in
+                  conjunction with storeId.
                 '';
               };
 
